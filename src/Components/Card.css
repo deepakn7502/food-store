@@ -6,7 +6,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  margin: 20px; 
+  margin: 20px;
 }
 
 .card-image {
@@ -19,28 +19,29 @@
   width: 100%;
 }
 
-.card-content{
-    height: 15%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
-    margin: 10px auto;
+.card-content {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  margin: 10px auto;
 }
-.card-container h1{
-    font-size: 22px;
-    color: #28aa02;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    text-shadow: 1px 1px 1px #333;
-}
-
-.card-container h3{
-    font-size: 20px;
+.card-content h1 {
+  font-size: 22px;
+  color: #28aa02;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-transform: capitalize;
+  text-shadow: 1px 1px 1px #333;
 }
 
-.card-container h3 span{
-    font-size: 25px;
-    margin-left: 10px;
-    color: #777;
+.card-content h3 {
+  font-size: 20px;
+}
+
+.card-content h3 span {
+  font-size: 25px;
+  margin-left: 10px;
+  color: #777;
 }
