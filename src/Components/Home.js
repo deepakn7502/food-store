@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { collection, getDocs } from "firebase/firestore";
+import { collection, doc, getDocs, onSnapshot } from "firebase/firestore";
 
 import Card from "./Card";
 import Contact from "./Contact";
@@ -18,13 +18,14 @@ function Home() {
 
   useEffect(() => {
     const getDetails = async () => {
-      const data = await getDocs(detailsCollectionsRef);
-      setDetails(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      const data = onSnapshot(detailsCollectionsRef);
+      setDetails(data.docs.map((doc) => ({ ...doc.dta(), id: doc.id })));
     };
     getDetails();
-  });
+    console.log(details);
+  }, []);
   return (
-    <div>
+    <div className="page-container">
       <div className="navbar">
         <Navbar />
       </div>

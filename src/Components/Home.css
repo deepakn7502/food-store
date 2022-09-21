@@ -1,3 +1,8 @@
+.page-container{
+    width: 100vw;
+    height: 100vh;
+}
+
 .cards-list{
     width: 100vw;
     height: fit-content;
@@ -16,4 +21,5 @@
     height: fit-content;
     padding: 50px 0;
     justify-content: space-evenly;
+    visibility: hidden;
 }
