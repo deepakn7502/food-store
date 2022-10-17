@@ -10,10 +10,8 @@ function Card(props) {
         </div>
         <div className="card-content">
           <h1>{props.name}</h1>
-          <h3>
-            Price:
-            <span>Rs {props.price}</span>
-          </h3>
+          <h2>{props.desc}</h2>
+          <h3>Rs {props.price}</h3>
         </div>
       </div>
     </div>

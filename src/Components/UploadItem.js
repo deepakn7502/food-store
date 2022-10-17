@@ -6,7 +6,7 @@ import { collection, doc, getDocs, setDoc } from "firebase/firestore";
 
 import { db, storage } from "../firebase";
 
-import "./UploadItem.css"
+import "./UploadItem.css";
 
 function UploadItem() {
   const [imageUpload, setImageUpload] = useState(null);
@@ -15,6 +15,7 @@ function UploadItem() {
   const [itemPrice, setItemPrice] = useState();
   const [itemURL, setItemURL] = useState("");
   const [itemImageName, setItemImageName] = useState("");
+  const [desc, setDesc] = useState("");
 
   const [itemDetails, setItemDetails] = useState([]);
 
@@ -61,6 +62,7 @@ function UploadItem() {
       itemprice: Number(itemPrice),
       imgURL: itemURL,
       itemimagename: imageUpload.name,
+      desc: desc,
     });
   };
   return (
@@ -82,17 +84,30 @@ function UploadItem() {
         }}
       />
       <br />
-      <input className="choose-image"
+      <input
+        type="text"
+        placeholder="Description"
+        onChange={(event) => {
+          setDesc(event.target.value);
+        }}
+      />
+      <br />
+      <input
+        className="choose-image"
         type="file"
         onChange={(event) => {
           setImageUpload(event.target.files[0]);
         }}
       />
       <br />
-      <button className="upload-image" onClick={uploadImage}>Upload Image</button>
+      <button className="upload-image" onClick={uploadImage}>
+        Upload Image
+      </button>
       <br />
       <br />
-      <button className="upload-item" onClick={createItem}>Upload Item</button>
+      <button className="upload-item" onClick={createItem}>
+        Upload Item
+      </button>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 .card-container {
-  height: 250px;
+  height: 300px;
   width: 400px;
   box-shadow: 5px 5px 15px #aaa, -5px -5px 15px #aaa;
   border-radius: 25px;
@@ -24,7 +24,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: row;
   margin: 10px auto;
 }
@@ -36,12 +36,13 @@
   text-shadow: 1px 1px 1px #333;
 }
 
-.card-content h3 {
-  font-size: 20px;
+.card-content h2 {
+  font-size: 15px;
+  margin: 0 10px;
+  overflow: hidden;
 }
 
-.card-content h3 span {
-  font-size: 25px;
-  margin-left: 10px;
+.card-content h3 {
+  font-size: 21px;
   color: #777;
 }

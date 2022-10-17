@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 
-import { collection, doc, getDocs, onSnapshot } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 import Card from "./Card";
 import Contact from "./Contact";
-import UploadItem from "./UploadItem";
 
 import "./Home.css";
 import Navbar from "./Navbar";
 import { db } from "../firebase";
-import UpdateItem from "./UpdateItem";
 
 function Home() {
   const [details, setDetails] = useState([]);
@@ -18,11 +16,10 @@ function Home() {
 
   useEffect(() => {
     const getDetails = async () => {
-      const data = onSnapshot(detailsCollectionsRef);
-      setDetails(data.docs.map((doc) => ({ ...doc.dta(), id: doc.id })));
+      const data = await getDocs(detailsCollectionsRef);
+      setDetails(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     getDetails();
-    console.log(details);
   }, []);
   return (
     <div className="page-container">
@@ -37,6 +34,7 @@ function Home() {
                 name={item.itemname}
                 price={item.itemprice}
                 imageURL={item.imgURL}
+                desc={item.desc}
               />
             </div>
           );
@@ -44,10 +42,6 @@ function Home() {
       </div>
       <div className="contact-bar">
         <Contact />
-      </div>
-      <div className="crud">
-        <UploadItem />
-        <UpdateItem />
       </div>
     </div>
   );
